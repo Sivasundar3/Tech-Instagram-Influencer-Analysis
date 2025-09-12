@@ -1,3 +1,5 @@
+# 3. Filter all the posts that were published on a weekend in the month of March and April and export them to a separate csv file.
+
 select d.month_name , 
        d.weekday_or_weekend,
        d.weekday_name, 
