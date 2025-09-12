@@ -1,3 +1,9 @@
+/*  7. What is the percentage breakdown of total reach by post type? The final output includes the following fields:
+                                            • post_type
+                                            • total_reach
+                                            • reach_percentage */
+
+
 with reach_contribution as
 (
 select post_type,
