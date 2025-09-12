@@ -1,7 +1,7 @@
-# 10. Create a stored procedure that takes the 'Week_no' as input and generates a report displaying the total shares for each 'Post_type'. 
-#      The output of the procedure should consist of two columns:
+/* 10. Create a stored procedure that takes the 'Week_no' as input and generates a report displaying the total shares for each 'Post_type'. 
+     The output of the procedure should consist of two columns:
                                                          • post_type
-                                                         • total_shares
+                                                         • total_shares */
 
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetSharesByPostType`(IN input_week_no VARCHAR(10))
