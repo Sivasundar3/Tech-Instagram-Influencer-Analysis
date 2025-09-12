@@ -1,3 +1,8 @@
+# 5. Write a CTE that calculates the total number of 'likes’ for each 'post_category' during the month of 'July' and subsequently, arrange the 'post_category' values in descending order according to their total likes.
+
+
+
+
 WITH likes_per_category AS (
     SELECT 
         fc.post_category,
