@@ -1,3 +1,9 @@
+/* 9. List the top three dates in each month with the highest number of new followers. The final output should include the following columns:
+                                                   • month
+                                                   • date
+                                                   • new_followers */
+
+
 with top_three_dates as
 (
 select d.month_name,
