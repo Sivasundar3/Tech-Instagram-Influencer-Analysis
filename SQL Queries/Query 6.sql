@@ -1,3 +1,13 @@
+/* 6. Create a report that displays the unique post_category names alongside their respective counts for each month. The output should have three columns:
+                                                                • month_name
+                                                                • post_category_names
+                                                                • post_category_count
+Example:
+• 'April', 'Earphone,Laptop,Mobile,Other Gadgets,Smartwatch', '5'
+• 'February', 'Earphone,Laptop,Mobile,Smartwatch', '4'                    */
+
+
+
 SELECT 
     d.month_name,
     GROUP_CONCAT(DISTINCT fc.post_category ORDER BY fc.post_category SEPARATOR ', ') AS post_category_names,
