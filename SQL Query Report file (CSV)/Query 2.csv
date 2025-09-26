@@ -1,4 +1,3 @@
- # 2. What are the highest and lowest recorded impressions for each post type?
 
 post_type,highest_impression,lowest_impression
 "IG Image",129694,23367
