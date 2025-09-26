@@ -1,1 +1,0 @@
-CALL GetSharesByPostType ('W3');
