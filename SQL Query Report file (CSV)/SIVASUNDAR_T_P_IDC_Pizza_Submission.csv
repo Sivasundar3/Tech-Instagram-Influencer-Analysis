@@ -1,0 +1,17 @@
+Name,Email Address,AnswerQuery
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT DISTINCT category AS unique_pizza_category FROM pizza_types;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT pizza_type_id, name, ingredients FROM pizza_types LIMIT 5;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT * FROM pizzas WHERE price IS NULL;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT * FROM orders WHERE date = '2015-01-01';
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT * FROM pizzas ORDER BY price DESC;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT * FROM pizzas WHERE size IN('L','XL');
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT * FROM pizzas WHERE price BETWEEN 15.00 AND 17.00;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT * FROM pizzas WHERE pizza_type_id LIKE '%ckn';
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT * FROM orders WHERE date = '2015-02-15' OR time > '18:00:00';
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT SUM(quantity) AS pizzas_sold FROM order_details;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT ROUND(AVG(price),2) || ' $' AS average_pizza_price FROM pizzas;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT od.order_id, SUM(p.price * od.quantity) AS order_value FROM order_details od JOIN pizzas p ON od.pizza_id = p.pizza_id GROUP BY od.order_id ORDER BY order_value DESC;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT pt.category AS pizza_category, SUM(od.quantity) AS quantity_sold FROM pizza_types pt JOIN pizzas p ON pt.pizza_type_id = p.pizza_type_id JOIN order_details od ON p.pizza_id = od.pizza_id GROUP BY pizza_category ORDER BY quantity_sold DESC;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT pt.category AS pizza_category, SUM(od.quantity) AS quantity_sold FROM pizza_types pt JOIN pizzas p ON pt.pizza_type_id = p.pizza_type_id JOIN order_details od ON p.pizza_id = od.pizza_id GROUP BY pizza_category HAVING SUM(od.quantity) > 5000;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT p.pizza_id, pt.name, pt.category FROM pizza_types pt LEFT JOIN pizzas p ON pt.pizza_type_id = p.pizza_type_id LEFT JOIN order_details od ON p.pizza_id = od.pizza_id WHERE od.pizza_id IS NULL;
+SIVASUNDAR T P,iamsivasundar@gmail.com,SELECT p1.pizza_type_id, p1.size AS size1, p2.size AS size2, p1.price AS price1, p2.price AS price2, (p2.price - p1.price) AS price_difference FROM pizzas p1 JOIN pizzas p2 ON p1.pizza_type_id = p2.pizza_type_id AND p1.size < p2.size ORDER BY p1.pizza_type_id, size1;
